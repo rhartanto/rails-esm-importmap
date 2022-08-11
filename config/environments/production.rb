@@ -1,5 +1,5 @@
 require "active_support/core_ext/integer/time"
-require File.expand_path('../../assets_precompile', __FILE__)
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -31,8 +31,9 @@ Rails.application.configure do
   config.assets.compile = false
   config.assets.digest = true
 
-  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += assets_precompile()
+  # # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  # sprockets 4.x uses ./app/assets/config/manifest.js
+  # config.assets.precompile += assets_precompile()
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = 'http://assets.example.com'
