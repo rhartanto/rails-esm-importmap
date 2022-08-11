@@ -2,7 +2,7 @@
 
 <h1>Books</h1>
 
-<table>
+<table id="books-table">
   <thead>
     <tr>
       <th>Title</th>
@@ -24,8 +24,18 @@
       </tr>
     <% end %>
   </tbody>
+
+  <tfoot>
+  <tr><td>Total</td><td id="rows-total"></td></tr>
+  </tfoot>
+
 </table>
 
 <br>
 
 <%= link_to 'New Book', new_book_path %>
+
+<%# ------ THIS IS IMPORT MAP SCRIPT (ES6) REFERENCE  ----------- %>
+<% content_for :head do %>
+  <%= javascript_import_module_tag "esm/ui/books/book_list" %>
+<% end %>

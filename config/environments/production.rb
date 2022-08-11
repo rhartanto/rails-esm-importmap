@@ -39,6 +39,7 @@ Rails.application.configure do
   # config.asset_host = 'http://assets.example.com'
   # CDN pointing to staging1.turboly.com as origin
   config.action_controller.asset_host = "http://localhost:3000"
+  # config.action_controller.asset_host = "//d1t57ywbcvwhz8.cloudfront.net"
 
   # Action Mailer asset host (requires specifying protocol)
   config.action_mailer.asset_host     = "http://localhost"

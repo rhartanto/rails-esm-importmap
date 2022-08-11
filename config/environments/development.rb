@@ -53,7 +53,13 @@ Rails.application.configure do
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
 
-  config.assets.js_compressor = :uglifier
+  #config.assets.js_compressor = :uglifier
+  # to avoid error (Unexpected token: keyword (const).
+  # To use ES6 syntax, harmony mode must be enabled with Uglifier.new(:harmony => true)
+  #config.assets.js_compressor = Uglifier.new(harmony: true)
+  # use terser to avoid uglifier error due to importmap and .map files
+  config.assets.js_compressor = :terser
+
   config.assets.css_compressor = :sass
   config.assets.check_precompiled_asset = false
 

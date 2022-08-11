@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.6'
+ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails','~> 6.1.4.4'
@@ -21,7 +21,9 @@ gem 'jbuilder', '~> 2.7'
 
 # Assets                                                                                                          # Both
 gem 'coffee-rails', '~> 5.0.0'                                                                                    # Both
-gem 'uglifier', '~> 4.1.20'                                                                                       # Both
+# gem 'uglifier', '~> 4.1.20'                                                                                       # Both
+# use terser to avoid uglifier error due to importmap and .map files
+gem 'terser', '~> 1.1.12'                                                                                         # Both
 # Both
 # Javascript                                                                                                      # Both
 gem 'jquery-rails', '~> 4.4.0'                                                                                    # Both
@@ -56,3 +58,4 @@ end
 
 
 gem 'sprockets', '4.1.1'
+gem "importmap-rails", "~> 1.1.5"

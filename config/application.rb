@@ -8,6 +8,10 @@ Bundler.require(*Rails.groups)
 
 module RailsWithEs6
   class Application < Rails::Application
+    # need this line so we can run ./bin/rails importmap:install using ruby 2.6
+    # https://github.com/rails/importmap-rails/issues/47
+    attr_accessor :importmap
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
