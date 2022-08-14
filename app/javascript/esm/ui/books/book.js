@@ -1,29 +1,9 @@
+// This doesn't need javascript tests since it is only mounting the component to DOM
+// so instead we should be testing the components
 import { createApp } from 'vue'
-import ButtonCounter from 'esm/components/button_counter'
-import Todos from 'esm/components/todos'
+import Book from 'esm/components/book'
 
 console.log("loading vue 3");
+createApp(Book).mount('#app');
 
-const app = createApp({
-  template: `
-    <div>
-      <ButtonCounter />
-      
-      <div data-test="app-message">{{ message }}</div>
-
-      <Todos />
-    </div>
-  `,
-  data() {
-    return {
-      message: 'Hello Vue!',
-    }
-  },
-  components: {
-    ButtonCounter,
-    Todos,
-  }
-})
-
-
-app.mount('#app');
+export default Book;

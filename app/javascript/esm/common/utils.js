@@ -1,9 +1,11 @@
 import { v4 as uuidv4 } from 'uuid'; // this is from vendors/es6/uuid.js
 
-export default function utils() {
+export default function uuid() {
   //
+  const uuid = uuidv4();
   console.log('bar');
-  console.log(`uuid from ES6 ${uuidv4()}`)
+  console.log(`uuid from ES6 ${uuid}`)
+  return uuid;
 }
 
 export const CountTableRows = (tableId) => {
